@@ -8,9 +8,11 @@ export class UsersService {
 
     async userCreate(user:UserDto){
         try {
+            console.log("inside userCreate:::");
             const response = await this.prisma.user.create({
                 data:user,
             })
+             console.log("inside userCreate:::",response);
             return {
                 success:true,
                 data:response,
